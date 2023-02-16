@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>EventsInTown</title>
 	<link rel="stylesheet" href="./css/main.css">
-	<script type="module" src="./js/main.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>	<script type="module" src="./js/main.js"></script>
 </head>
 <body>
 	<header class="header--index">
@@ -13,10 +13,13 @@
 		<nav class="navigation">
 			<div class="navigation--primary">
 				<div class="navigation-search">
-					<p>Happenings in </p><input type="text" class="navigation-search__input" size="15" placeholder="Oslo">
+					<p>Happenings in </p>
+					<input type="text" class="navigation-search__input" placeholder="Oslo &#xF002;" style="font-family:Arial, FontAwesome" />
+					<!-- <input type="text" class="navigation-search__input" size="15" placeholder="Oslo"> -->
+					<!-- <img class="search-icon" src="./assets/icons/searchIcon.png" alt="search icon"> -->
 				</div>
 				<div class="calendar">
-					<button class="calendar__button">Choose date</button>
+					<button class="calendar__button"><img src="./assets/icons/calendar.svg" alt="">Choose date</button>
 					<div class="calendar__header">
 						<p class="current-date">February 2023</p>
 						<div class="arrows">
