@@ -1,0 +1,36 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	background-color: green;
+}
+
+button {
+	cursor: pointer;
+	font-family: inherit;
+	font-size: inherit;
+	border: 0;
+	background-color: inherit;
+	color: inherit;
+}
+
+img {
+	width: 100%;
+	display: block;
+}
+
+li {
+	list-style: none;
+	font: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+input {
+	font: inherit;
+	border: none;
+	outline: none;
+}
+
