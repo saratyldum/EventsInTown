@@ -1,0 +1,45 @@
+.information__header {
+	background-image: url('../../assets/images/Lizzo.jpeg');
+	background-size: cover;
+	height: 40vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	color: white;
+}
+
+.information__header--overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.information__header--text {
+	z-index: 1;
+	text-align: center;
+	line-height: 1.5rem;
+}
+
+.header-information-name {
+	font-size: 4rem;
+	font-weight: bold;
+}
+
+.header-information-venue {
+	padding-top: 1.5rem;
+}
+
+.header-information-date {
+	margin-bottom: 1rem;
+}
+
+.header-information-button {
+	background-color: var(--primary-color);
+	padding: 0.7rem 4rem;
+	border-radius: 20px;
+}
