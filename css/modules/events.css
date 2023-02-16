@@ -10,13 +10,18 @@
 	font-size: 0.9rem;
 }
 
-.event__image {
-	width: 30vw;
-	height: 100%;
+.event__image img {
+	width: 110px;
+	height: 120px;
+	object-fit: cover;
 }
 
 .event__information {
-	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 0.2rem;
+	padding: 0 1rem;
 }
 
 .event__information-date {
