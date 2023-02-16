@@ -1,0 +1,136 @@
+.ticket-modal {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	align-items: center;
+	background-color: white;
+	z-index: 2;
+}
+
+.ticket__header {
+	width: 100vw;
+	display: flex;
+	gap: 1rem;
+	justify-content: space-between;
+	text-align: center;
+	padding: 1rem;
+	margin: 1rem
+}
+
+.ticket__header-info {
+	width: 90vw;
+}
+
+.ticket__header-info--name{
+	font-size: 2rem;
+}
+.ticket__header-info--date {
+	font-size: 1rem;
+}
+
+.ticket-modal__close-button {
+	width: 40px;
+}
+
+.ticket-items {
+	width: 100vw;
+}
+
+.ticket-item {
+	padding: 1rem 1rem;
+	margin: 1rem;
+	border: 1px solid black ;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.ticket-item--top {
+	padding-bottom: 1rem;
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	align-items: center;
+}
+.ticket-item--top::after {
+	position: absolute;
+	content: '';
+	width: 106%;
+	height: 1px;
+	background-color: black;
+	bottom: 0;
+	left: -1rem;
+}
+
+.ticket-counter {
+	display: flex;
+	gap: 1rem;
+}
+
+.ticket-counter__count {
+	padding: 0.3rem 1rem;
+}
+
+.ticket-counter__buttonLess {
+	padding: 0.3rem 1rem;
+	background-color: lightgray;
+	border-radius: 5px;
+}
+.ticket-counter__buttonMore {
+	padding: 0.3rem 1rem;
+	background-color: var(--primary-color);
+	color: white;
+	border-radius: 5px;
+}
+
+.ticket-price {
+	padding-top: 1rem;
+}
+
+.ticket-item--bottom {
+	display: flex;
+	justify-content: space-between;
+}
+
+.ticket--sold-out {
+	padding: 0.3rem 1rem;
+	background-color: lightgray;
+	border-radius: 5px;
+	margin: 0.5rem 2rem 0.5rem 0;
+}
+
+.sold-out {
+	opacity: 0.5;
+}
+
+.sold-out button {
+	background-color: lightgray;
+	color: black;
+}
+
+.ticket-total {
+	width: 100vw;
+	padding-right: 1rem;
+	text-align: right;
+	font-weight: bold;
+}
+
+.ticket__button-check-out {
+	background-color: var(--primary-color);
+	border: 1px solid black;;
+	width: 90vw;
+	margin: 1rem;
+	padding: 1rem;
+	color: white;
+	border-radius: 5px;
+	position: fixed;
+	left: .5rem;
+	bottom: 1rem;
+}
+
+
+
