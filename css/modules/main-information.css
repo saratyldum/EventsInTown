@@ -1,0 +1,12 @@
+.information__main {
+	margin: 1rem;
+}
+
+.information__times {
+	margin: 2rem 0;
+
+}
+
+.information__location--venue {
+	font-weight: bold;
+}
