@@ -26,16 +26,15 @@
 .information__header--text {
 	z-index: 1;
 	text-align: center;
-	line-height: 1.5rem;
 }
 
 .header-information-name {
-	font-size: 4rem;
+	font-size: 3rem;
 	font-weight: bold;
 }
 
 .header-information-venue {
-	padding-top: 1.5rem;
+	padding-top: 1rem;
 }
 
 .header-information-date {
@@ -98,7 +97,7 @@
 @media screen and (min-width: 992px) {
 	.information__header {
 		height: 30vh;
-		margin: 1rem 1rem 5rem 1rem
+		margin: 1rem 1rem 6rem 1rem
 	}
 
 	.header-information-name {
@@ -110,7 +109,7 @@
 		font-size: 1.5rem;
 		line-height: normal;
 	}
-	
+
 	.header-information__image-small {
 		top: 10%;
 	}

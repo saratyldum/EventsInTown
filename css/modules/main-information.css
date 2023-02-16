@@ -13,6 +13,13 @@
 }
 
 @media screen and (min-width: 992px) {
-	.information__main
+	.information__main {
+		display: flex;
+		gap: 2rem;
+	}
+
+	.information__information {
+		width: 50vw;
+	}
 
 }
