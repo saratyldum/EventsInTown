@@ -1,5 +1,6 @@
 .information__main {
 	margin: 1rem;
+	letter-spacing: 0.05rem;
 }
 
 .information__times {
@@ -9,4 +10,9 @@
 
 .information__location--venue {
 	font-weight: bold;
+}
+
+@media screen and (min-width: 992px) {
+	.information__main
+
 }
