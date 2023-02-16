@@ -11,7 +11,7 @@ export default async function renderEventCards(events) {
 			year: "numeric",
 		 };
 	
-		const date = new Date(event.dates.start.dateTime);
+		const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
 		formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
 		}
 	
@@ -20,6 +20,8 @@ export default async function renderEventCards(events) {
 	 */
 	events.forEach(event => {
 		formatDate(event)
+
+		console.log(event.dates);
 
 		/**
 		 * finds images with aspect ration 4:3
