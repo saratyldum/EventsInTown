@@ -1,4 +1,4 @@
-/**
- * @TODO fetch city that is searched for in input field
- * @TODO return that city and send it in to fetch events function
- */
+export default function fetchCity(e) {
+	const cityValue = document.querySelector('.navigation-search__input').value;
+	return cityValue;
+}

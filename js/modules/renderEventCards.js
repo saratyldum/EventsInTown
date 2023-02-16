@@ -21,8 +21,6 @@ export default async function renderEventCards(events) {
 	events.forEach(event => {
 		formatDate(event)
 
-		console.log(event.dates);
-
 		/**
 		 * finds images with aspect ration 4:3
 		 */
