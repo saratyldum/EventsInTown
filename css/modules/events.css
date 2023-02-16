@@ -1,7 +1,8 @@
 .event {
-	margin: 0.5rem;
+	margin: 1rem;
 	border-bottom: 1px solid black;
 }
+
 .event a {
 	display: flex;
 	gap: 2rem;
