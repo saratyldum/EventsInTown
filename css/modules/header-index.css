@@ -1,0 +1,50 @@
+.header-image--index img {
+	object-fit: cover;
+	height: 150px;
+}
+
+.navigation {
+	padding: 1rem 0.5rem 0rem 0.5rem;
+}
+
+.navigation--primary {
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation-search p, .navigation-search__input{
+	display: inline;
+	font-weight: bold;
+	font-size: 1.25rem;
+}
+
+.navigation-search__input {
+	text-decoration: underline;
+	color: var(--primary-color);
+}
+
+.navigation-search__input::placeholder {
+	color: var(--primary-color);
+}
+
+.navigation-search__input:focus::placeholder {
+	color: gray;
+}
+
+.navigation__categories, .navigation__categories ul {
+	display: flex;
+	gap: 1rem;
+	overflow: scroll;
+	margin-top: 0.3rem;
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+.calendar__button {
+	border: 1px solid black;
+	padding: 0.2rem 0.5rem;
+}
+
+.calendar__header, .calendar__body {
+	display: none;
+}

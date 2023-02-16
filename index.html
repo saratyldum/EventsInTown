@@ -8,60 +8,65 @@
 	<script type="module" src="./js/main.js"></script>
 </head>
 <body>
-	<header>
-		<div class="header-image"><img src="./assets/images/header-image.jpg" alt="A big crowd at a concert"></div>
-		<nav>
-			<div class="navigation-search">
-				Happenings in <input type="text" placeholder="Oslo">
-			</div>
-			<div class="calendar">
-				<div class="calendar__header">
-					<p class="current-date">February 2023</p>
-					<div class="arrows">
-					  <button id="prev" class="">Previous month</button>
-					  <button id="next" class="">Next month</button>
-					</div>
+	<header class="header--index">
+		<div class="header-image--index"><img src="./assets/images/header-image.jpg" alt="A big crowd at a concert"></div>
+		<nav class="navigation">
+			<div class="navigation--primary">
+				<div class="navigation-search">
+					<p>Happenings in </p><input type="text" class="navigation-search__input" size="15" placeholder="Oslo">
 				</div>
-				 <div class="calendar__body">
-					<ul class="calendar__weeks">
-					  <li>Sun</li>
-					  <li>Mon</li>
-					  <li>Tue</li>
-					  <li>Wed</li>
-					  <li>Thu</li>
-					  <li>Fri</li>
-					  <li>Sat</li>
-					</ul>
-					<ul class="calendar__days">
-						<li>31</li>
-					</ul>
-				 </div>
+				<div class="calendar">
+					<button class="calendar__button">Choose date</button>
+					<div class="calendar__header">
+						<p class="current-date">February 2023</p>
+						<div class="arrows">
+						  <button id="prev" class="">Previous month</button>
+						  <button id="next" class="">Next month</button>
+						</div>
+					</div>
+					 <div class="calendar__body">
+						<ul class="calendar__weeks">
+						  <li>Sun</li>
+						  <li>Mon</li>
+						  <li>Tue</li>
+						  <li>Wed</li>
+						  <li>Thu</li>
+						  <li>Fri</li>
+						  <li>Sat</li>
+						</ul>
+						<ul class="calendar__days">
+							<li>31</li>
+						</ul>
+					 </div>
+				</div>
 			</div>
-			<div class="navigation__categories">
-				<span>arrow left</span>
-				<ul>
-					<li>Sport</li>
-					<li>Theatre</li>
-					<li>Festivals</li>
-					<li>Family</li>
-					<li>Alternative</li>
-					<li>Classical</li>
-					<li>Dance Band</li>
-					<li>Electronic</li>
-					<li>Folk</li>
-					<li>Metal</li>
-					<li>Hip-Hop</li>
-					<li>Jazz/Blues</li>
-					<li>Reggae</li>
-					<li>Rock</li>
-					<li>Pop</li>
-					<li>Soul</li>
-				</ul>
-				<span>arrow right</span>
+			<div class="navigation--secondary">
+				<div class="navigation__categories">
+					<span> < </span>
+					<ul>
+						<li>Sport</li>
+						<li>Theatre</li>
+						<li>Festivals</li>
+						<li>Family</li>
+						<li>Alternative</li>
+						<li>Classical</li>
+						<li>Dance Band</li>
+						<li>Electronic</li>
+						<li>Folk</li>
+						<li>Metal</li>
+						<li>Hip-Hop</li>
+						<li>Jazz/Blues</li>
+						<li>Reggae</li>
+						<li>Rock</li>
+						<li>Pop</li>
+						<li>Soul</li>
+					</ul>
+					<span> ></span>
+				</div>
 			</div>
 		</nav>
 	</header>
-	<main>
+	<main class="main--index">
 		<div class="grid">
 			<div class="event">
 				<a href="./information.html">
