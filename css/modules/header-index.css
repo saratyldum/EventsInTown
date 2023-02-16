@@ -10,6 +10,7 @@
 .navigation--primary {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 0.5rem;
 }
 
 .navigation-search p, .navigation-search__input{
