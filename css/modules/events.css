@@ -1,0 +1,36 @@
+.event {
+	margin: 0.5rem;
+	border-bottom: 1px solid black;
+}
+.event a {
+	display: flex;
+	gap: 2rem;
+	text-decoration: none;
+	color: inherit;
+	font-size: 0.9rem;
+}
+
+.event__image {
+	width: 30vw;
+	height: 100%;
+}
+
+.event__information {
+	padding: 1rem;
+}
+
+.event__information-date {
+	color: var(--primary-color);
+}
+
+.event__information-name {
+	font-weight: bold;
+	text-transform: uppercase;
+
+}
+.event__information-city {
+	text-transform: uppercase;
+}
+.event__information-venue {
+
+}
