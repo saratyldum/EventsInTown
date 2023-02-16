@@ -1,6 +1,9 @@
 export default async function renderEventCards(events) {
 	const main = document.querySelector('.grid');
 
+	/**
+	 * @TODO gjør at hvert event kun synes en gang
+	 */
 	events.forEach(event => {
 		//DETTE ER  BILDENE SOM SKAL BRUKEs
 		const images = event.images.find(image => {
