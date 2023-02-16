@@ -37,6 +37,51 @@
 .event__information-city {
 	text-transform: uppercase;
 }
-.event__information-venue {
 
+
+@media screen and (min-width: 768px) {
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin: 1rem;
+	}
+
+	.event {
+		margin: 0;
+		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+		border-bottom: none;
+
+	}
+
+	.event a {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.event a:hover {
+		box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.3);
+	}
+
+	.event__image img {
+		width: 100%;
+	}
+
+	.event__information {
+		padding: 1.5rem 1rem;
+	}
+
+	.event__information-name {
+		font-size: 1.25rem;
+	}
+	.event__information-date {
+		font-weight: bold;
+	}
 }
+
+@media screen and (min-width: 992px) {
+	.grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
