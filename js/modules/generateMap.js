@@ -1,14 +1,17 @@
-export default function generateMap(events) {
+export default function generateMap(lat, long) {
 	//SEND INN LAT/LONG TIL KLIKKEDE ELEMENT
-	const lat = events[0]._embedded.venues[0].location.latitude;
-	const long = events[0]._embedded.venues[0].location.longitude;
+	// console.log(events);
+	// const latitude = events[0]._embedded.venues[0].location.latitude;
+	// const longitude = events[0]._embedded.venues[0].location.longitude;
 
-	const map = L.map('map').setView([lat, long], 13);
+	const coordinates = [lat, long];
 
-	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-   	maxZoom: 19,
-    	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	const map = L.map('map').setView(coordinates, 13);
+
+	L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+		maxZoom: 19,
+		subdomains:['mt0','mt1','mt2','mt3']
 	}).addTo(map);
 
-	const marker = L.marker([lat, long]).addTo(map);
+	const marker = L.marker(coordinates).addTo(map).openPopup();;
 }
