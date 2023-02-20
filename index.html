@@ -9,7 +9,6 @@
 </head>
 <body>
 	<header class="header--index">
-		<div class="header-image--index"><img src="./assets/images/header-image.jpg" alt="A big crowd at a concert"></div>
 		<nav class="navigation">
 			<div class="navigation--primary">
 				<div class="navigation-search">
@@ -17,13 +16,13 @@
 					<input type="text" class="navigation-search__input" placeholder="Oslo &#xF002;" style="font-family:Arial, FontAwesome" />
 				</div>
 				<div class="calendar">
-					<label for="date">Choose date: </label>
+					<label for="date"></label>
 					<input type="date" id="date" name="date" value="2023-02-20" min="2023-02-20">
 				</div>
 				</div>
 			<div class="navigation--secondary">
 				<div class="navigation__categories">
-					<button> <img src="./assets/icons/arrowLeft.svg" alt="Go left"> </button>
+					<button> <img class="navigation__arrow-left" src="./assets/icons/arrowLeft.svg" alt="Go left"> </button>
 					<ul>
 						<li><button class="category" id="sport">Sport</button></li>
 						<li><button class="category" id="theatre">Theatre</button></li>
@@ -42,8 +41,9 @@
 						<li><button class="category" id="reggae">Reggae</button></li>
 						<li><button class="category" id="pop">Pop</button></li>
 						<li><button class="category" id="soul">Soul</button></li>
+						<li><button class="category" id="">All events</button></li>
 					</ul>
-					<button> <img src="./assets/icons/arrowRight.svg" alt="Go right"></button>
+					<button> <img class="navigation__arrow-right" src="./assets/icons/arrowRight.svg" alt="Go right"></button>
 				</div>
 			</div>
 		</nav>
