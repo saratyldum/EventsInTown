@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.calendar {
+	font-family: 'Poppins', sans-serif;
+	display: flex;
+	align-items: center;
+	padding: 0 10px;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #9b59b6;
+}
+
+.calendar-wrapper {
+	width: 450px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.calendar-header {
+	display: flex;
+	align-items: center;
+	padding: 1.5rem 2rem 1rem;	justify-content: space-between;
+}
+
+.calendar-arrows {
+	display: flex;
+}
