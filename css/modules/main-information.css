@@ -12,6 +12,10 @@
 	font-weight: bold;
 }
 
+#map {
+	height: 40vh;
+}
+
 @media screen and (min-width: 992px) {
 	.information__main {
 		display: flex;
@@ -20,6 +24,10 @@
 
 	.information__information {
 		width: 60vw;
+	}
+
+	.information__location {
+		width: 600px;
 	}
 
 }
