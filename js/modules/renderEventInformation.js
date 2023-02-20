@@ -11,8 +11,6 @@ export default function renderEventInformation(e, events) {
 		return event.name === eventClicked;
 	})
 
-	console.log(body);
-
 	let formattedDate;
 
 	function formatDate(event) {
@@ -65,5 +63,5 @@ export default function renderEventInformation(e, events) {
 
 	body.insertAdjacentHTML('beforeend', htmlInformation);
 
-	return [htmlInformation, body]
+	return bodyInformation;
 }
