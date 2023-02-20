@@ -1,5 +1,6 @@
 footer {
-	background-color: var(--primary-color-RGBA);
+	border: 1px solid var(--border-color);
+	background-color: var(--border-color);
 	text-align: center;
 	font-weight: bold;
 	padding: 0.5rem;
