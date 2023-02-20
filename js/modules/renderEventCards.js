@@ -1,47 +1,55 @@
 export default async function renderEventCards(events) {
-	const main = document.querySelector('.grid');
-	let formattedDate;
+	if(events !== null) {
 
-	function formatDate(event) {
-		const options = {
-			hour: "numeric",
-			minute: "numeric",
-			day: "numeric",
-			month: "long",
-			year: "numeric",
-		 };
+		const main = document.querySelector('.grid');
+		let formattedDate;
 	
-		const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
-		formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
-		}
-	
-	/**
-	 * @TODO gjør at hvert event kun synes en gang
-	 */
-	events.forEach(event => {
-		formatDate(event)
-
+		function formatDate(event) {
+			const options = {
+				hour: "numeric",
+				minute: "numeric",
+				day: "numeric",
+				month: "long",
+				year: "numeric",
+			 };
+		
+			const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
+			formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
+			}
+		
 		/**
-		 * finds images with aspect ration 4:3
+		 * @TODO gjør at hvert event kun synes en gang:
+		 * 
+		 let eventsNoDuplicates = events;
+		 eventsNoDuplicates = events.filter((value, index, self) => index === self.findIndex((t) => (t.name === value.name)))
 		 */
-		const image = event.images.find(image => {
-			return image.ratio === '4_3'
+	
+	
+		events.forEach(event => {
+			formatDate(event)
+	
+			/**
+			 * finds images with aspect ration 4:3
+			 */
+			const image = event.images.find(image => {
+				return image.ratio === '4_3'
+			});
+	
+			const html = `
+			<div class="event">
+				<a href="./information.html">
+					<div class="event__image"><img src="${image.url}" alt="${event.name}"></div>
+					<div class="event__information">
+						<p class="event__information-name">${event.name}</p>
+						<p class="event__information-date">${formattedDate}</p>
+						<p class="event__information-city">${event._embedded.venues[0].city.name}</p>
+						<p class="event__information-venue">${event._embedded.venues[0].name}</p>
+					</div>
+				</a>
+			</div>
+			`;
+			main.insertAdjacentHTML('beforeend', html);
 		});
-
-		const html = `
-		<div class="event">
-			<a href="./information.html">
-				<div class="event__image"><img src="${image.url}" alt="${event.name}"></div>
-				<div class="event__information">
-					<p class="event__information-name">${event.name}</p>
-					<p class="event__information-date">${formattedDate}</p>
-					<p class="event__information-city">${event._embedded.venues[0].city.name}</p>
-					<p class="event__information-venue">${event._embedded.venues[0].name}</p>
-				</div>
-			</a>
-		</div>
-		`;
-		main.insertAdjacentHTML('beforeend', html);
-	});
+	}
 }
 
