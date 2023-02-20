@@ -12,6 +12,7 @@ export default async function fetchEvents(city='oslo', classificationName='', da
 	
 		//TRY CATCH
 		const result =  await response.json();
+
 	
 		const {events} = result._embedded;
 		return events;

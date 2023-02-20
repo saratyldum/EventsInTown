@@ -2,13 +2,14 @@ import fetchEvents from "./modules/fetchEvents.js";
 import renderEventCards from "./modules/renderEventCards.js";
 import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
-// import generateMap from "./modules/generateMap.js";
+import generateMap from "./modules/generateMap.js";
 
 const categories = document.querySelectorAll('.category');
 const events = await fetchEvents('oslo');
 if(events !== null) {
 	renderEventCards(events);
 }
+generateMap(59.911491, 10.757933)
 
 if(categories !==null) {
 	categories.forEach(category => {
