@@ -5,10 +5,17 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>EventsInTown</title>
 	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+	integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+	crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+	integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+	crossorigin=""></script>
 	<script type="module" src="./js/main.js"></script>
 </head>
 <body>
-	<header class="information__header">
+	<div class="body-information"></div>
+	<!-- <header class="information__header">
 		<div class="information__header--overlay"></div>
 		<div class="information__header--text">
 			<p class="header-information-name">Lizzo: The Special Tour</p>
@@ -34,7 +41,7 @@
 		<section class="information__location">
 			<h3>Location</h3>
 			<p><span class="information__location--venue">Sentrum Scene</span>, Arbeidersamfunnets plass 1, 0181 Oslo</p>
-			<div class="information__map">
+			<div class="information__map" id="map">
 
 			</div>
 		</section>
@@ -112,7 +119,7 @@
 			</div>
 		</div>
 		</section>
-	</main>
+	</main> -->
 	<footer>EventsInTown</footer>
 </body>
 </html>

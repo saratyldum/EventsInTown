@@ -44,14 +44,15 @@
 	.grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 1rem;
-		margin: 1rem;
+		gap: 2rem;
+		margin: 2rem;
 	}
 
 	.event {
 		margin: 0;
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 		border-bottom: none;
+		border-radius: 5px;
 
 	}
 
