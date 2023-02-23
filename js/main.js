@@ -4,10 +4,18 @@ import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
 import generateMap from "./modules/generateMap.js";
 import handleResponse from "./modules/fetchEvents.js";
+import chosenEvent from "./modules/chosenEvent.js";
 
 const categories = document.querySelectorAll('.category');
 const events = await fetchEvents('oslo');
 const eventCards = document.querySelectorAll('.event');
+const	date = document.querySelector('input[type="date"]');
+
+const today = new Date().toISOString().split('T')[0];
+
+date.setAttribute('min', today)
+date.setAttribute('value', today)
+
 
 // generateMap(59.911491, 10.757933)
 
@@ -35,9 +43,8 @@ if(categories !==null) {
 	if(eventCards !== null) {
 	eventCards.forEach(event => {
 		event.addEventListener('click', (e) => {
-				document.cookie =  e.target.parentElement.children[0].textContent;
-			
-				renderEventInformation(events);
+			const eventChosen = chosenEvent(e, events)
+				renderEventInformation(eventChosen);
 			 });
 			// generateMap(events);
 		})
