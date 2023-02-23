@@ -1,12 +1,14 @@
-/**
- * @TODO take the clicked event and render infromation page based on event clicked
- * for each element.addeventlistener click
- */
 
-export default function renderEventInformation(e, events) {
+export default window.onload = function renderEventInformation(eventName, venue, img, eventStart) {
+	let clicked = document.cookie;
+
+	let parsed = JSON.parse(clicked)
+	
+	console.log(parsed);
+
 	const body = document.querySelector('.body-information');
-	const eventClicked = e.target.parentElement.children[0].textContent;
 
+	
 	const event = events.find(event => {
 		return event.name === eventClicked;
 	})
@@ -25,7 +27,6 @@ export default function renderEventInformation(e, events) {
 		const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
 		formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
 		}
-
 
 	const htmlInformation = `
 	<header class="information__header">
@@ -63,5 +64,5 @@ export default function renderEventInformation(e, events) {
 
 	body.insertAdjacentHTML('beforeend', htmlInformation);
 
-	return bodyInformation;
+	return body;
 }
