@@ -1,27 +1,35 @@
 .ticket-modal {
 	display: none;
 	flex-direction: column;
-	position: absolute;
+	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	top: 0;
 	left: 0;
 	align-items: center;
-	background-color: white;
-	z-index: 2;
+	background-color: black;
+	z-index: 3;
 }
 .ticket-desktop {
 	display: none;
 }
 
 .ticket__header {
-	width: 100vw;
+	width: 95vw;
 	display: flex;
 	gap: 1rem;
 	justify-content: space-between;
 	text-align: center;
 	padding: 1rem;
-	margin: 1rem
+	margin: 1rem;
+}
+
+.promo-code input[type='text'] {
+	background-color: black;
+}
+
+.promo-code input[type='text']::placeholder {
+	color: lightgray;
 }
 
 .ticket__header-info {
@@ -37,6 +45,7 @@
 
 .ticket-modal__close-button {
 	width: 40px;
+	cursor: pointer;
 }
 
 .ticket-items {
@@ -46,7 +55,7 @@
 .ticket-item {
 	padding: 1rem 1rem;
 	margin: 1rem;
-	border: 1px solid black ;
+	border: 1px solid var(--border-color);
 	border-radius: 5px;
 	display: flex;
 	flex-direction: column;
@@ -81,13 +90,25 @@
 .ticket-counter__buttonLess {
 	padding: 0.3rem 1rem;
 	background-color: lightgray;
+	color: black;
 	border-radius: 5px;
+	cursor: pointer;
 }
+
+.ticket-counter__buttonLess:not(:last-child):hover {
+	background-color: gray;
+}
+
 .ticket-counter__buttonMore {
 	padding: 0.3rem 1rem;
 	background-color: var(--primary-color);
 	color: white;
 	border-radius: 5px;
+	cursor: pointer;
+}
+
+.ticket-counter__buttonMore:not(:last-child):hover {
+	background-color: var(--primary-color-RGBA);
 }
 
 .ticket-price {
@@ -116,7 +137,7 @@
 }
 
 .ticket-total {
-	width: 100vw;
+	width: 100%;
 	padding-right: 1rem;
 	text-align: right;
 	font-weight: bold;
@@ -124,7 +145,7 @@
 
 .ticket__button-check-out {
 	background-color: var(--primary-color);
-	border: 1px solid black;;
+	border: 1px solid var(--border-color);;
 	width: 90vw;
 	margin: 1rem;
 	padding: 1rem;
@@ -135,28 +156,73 @@
 	bottom: 1rem;
 }
 
-/* @media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 	.ticket-modal {
-		flex-direction: row;
+		border-radius: 10px;
+		width: 700px;
+		height: 90%;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
 
+	.ticket__header {
+		width: 100%;
+		margin: 0;
+	}
+
+	.ticket__header-info {
+		width: 100%;
+	}
+
+	.ticket-items {
+		width: 100%;
+	}
+
+	.ticket__button-check-out {
+		width: 90%;
+		margin: 0;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	/* .ticket-modal {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width
+	}
+
+	.ticket-total {
+		display: none;
 	}
 
 	.ticket-mobile {
-		display: flex;
-		flex-direction: row;
-	}
+		/* display: flex;
+		flex-direction: row; */
+		/* width: 70vw; */
+	/* }
 
-	.ticket-desktop  {
-		display: block;
+	.ticket-desktop  {  */
+		/* display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+		margin-top: -4rem;
 	}
 
 	.ticket-desktop img {
-		width: 100px;
+		width: 100%;
 	}
 
 	.ticket-items {
 		display: inline;
 	}
-} */
+
+	.ticket-header {
+		/* position: absolute;
+		top: 1rem; */
+	} 
+}
 
 
