@@ -81,7 +81,7 @@
 	}
 
 	.event a:hover {
-		box-shadow: 2px 2px 25px rgba(0, 0, 0, 0.3);
+		box-shadow: 2px 2px 25px var(--primary-color-RGBA)
 	}
 
 	.event__image img {
