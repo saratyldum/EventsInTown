@@ -1,5 +1,5 @@
-import renderEventCards from "./renderEventCards.js";
 import fetchVariables from "./fetchVariables.js";
+import renderEventCards from "./renderEventCards.js";
 
 const categories = document.querySelectorAll('.category');
 const errorElement = document.querySelector('.errorBox');
@@ -18,7 +18,8 @@ export default async function fetchEvents(city='oslo', classificationName='', da
 		
 		try {
 			const response = await fetch(endpointEvents);
-			await handleResponse(response);
+			const events = await handleResponse(response)
+			return events;
 		} catch (error) {
 			handleError(error)
 		}
@@ -34,6 +35,7 @@ async function handleResponse(response) {
 			errorElement.classList.remove('visible');
 			errorElement.textContent = '';
 			renderEventCards(events);
+			return events;
 		} else {
 			handleError('Events could not be found')
 			throw new Error('Events could not be found');
@@ -54,20 +56,3 @@ function handleError(error) {
 	errorElement.textContent = error;
 }
 
-if(categories !==null) {
-	categories.forEach(category => {
-		category.addEventListener('click', async (e) => {
-			let [city, classificationName, date] = fetchVariables(e);
-			if(city == '') {
-				city = 'oslo'
-			}
-			fetchEvents(city, classificationName, date);
-		})});	
-
-	window.addEventListener('keyup', async (e) => {
-		if (e.key === 'Enter') {
-			const [city, classificationName, date] = fetchVariables(e);
-			fetchEvents(city, classificationName, date);
-		};
-	});
-}
