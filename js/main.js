@@ -3,14 +3,17 @@ import renderEventCards from "./modules/renderEventCards.js";
 import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
 import generateMap from "./modules/generateMap.js";
+import handleResponse from "./modules/fetchEvents.js";
 
 const categories = document.querySelectorAll('.category');
 const events = await fetchEvents('oslo');
-if(events !== null) {
-	renderEventCards(events);
-}
-generateMap(59.911491, 10.757933)
+const eventCards = document.querySelectorAll('.event');
 
+// generateMap(59.911491, 10.757933)
+
+/**
+ * Fetching events based on parameteres clicked or chosen
+ */
 if(categories !==null) {
 	categories.forEach(category => {
 		category.addEventListener('click', async (e) => {
@@ -18,31 +21,28 @@ if(categories !==null) {
 			if(city == '') {
 				city = 'oslo'
 			}
-			const events = await fetchEvents(city, classificationName, date);
-			renderEventCards(events);
+			fetchEvents(city, classificationName, date);
 		})});	
+		
+		window.addEventListener('keyup', async (e) => {
+			if (e.key === 'Enter') {
+				const [city, classificationName, date] = fetchVariables(e);
+				fetchEvents(city, classificationName, date);
+			};
+		});
+	}
 
-	window.addEventListener('keyup', async (e) => {
-		if (e.key === 'Enter') {
-			const [city, classificationName, date] = fetchVariables(e);
-			const events = await fetchEvents(city, classificationName, date);
-			renderEventCards(events);
-		};
-	});
-}
-	
-const eventCards = document.querySelectorAll('.event');
 
 if(eventCards !== null) {
 	eventCards.forEach(event => {
 		event.addEventListener('click', (e) => {
-			const body = renderEventInformation(e, events)
-			// generateMap(events);
+				const eventClicked = e.target.parentElement.children[0].textContent;
 
-			console.log(body);
-		});
-	})
-}
+				const body = renderEventInformation(eventClicked, events)
+			 });
+			// generateMap(events);
+		})
+	}
 
 
 
