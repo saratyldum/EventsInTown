@@ -14,96 +14,97 @@
 	<script type="module" src="./js/main.js"></script>
 </head>
 <body>
-	<div class="body-information"></div>
-	<!-- <header class="information__header">
-		<div class="information__header--overlay"></div>
-		<div class="information__header--text">
-			<p class="header-information-name">Lizzo: The Special Tour</p>
-			<p class="header-information-venue">Sentrum Scene</p>
-			<p class="header-information-date">February 17th, 2023</p>
-			<div class="header-information__image-small">
-				<img src="./assets/images/Lizzo.jpeg" alt="">
-			</div>
-			<button class="header-information-button">Get Tickets</button>
-		</div>
-	</header>
-	<main class="information__main">
-		<section class="information__information">
-			<h3>Information</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores perferendis, aut qui, et minus hic harum odit mollitia veniam doloribus exercitationem! Veritatis iste labore, eum rerum quod repellendus suscipit quisquam sed quo deleniti totam est natus id distinctio esse obcaecati alias ex sapiente, ratione, exercitationem possimus assumenda consequuntur voluptatibus officiis? Et ab ipsa nisi iusto obcaecati! A, sunt ipsam sequi explicabo hic exercitationem nesciunt suscipit architecto fuga, quisquam aperiam repellendus nostrum, illum natus? Maiores error laboriosam laudantium ratione dolores nulla itaque numquam expedita repellendus qui animi ipsa voluptatem, eligendi officia eveniet eos tenetur quis quaerat tempore iste saepe. Cum, adipisci!</p>
-			<div class="information__times">
-				<p>Event start: 19:30</p>
-				<p>Door open: 18:30</p>
-				<p>Duration: 90min</p>
-			</div>
-		</section>
-
-		<section class="information__location">
-			<h3>Location</h3>
-			<p><span class="information__location--venue">Sentrum Scene</span>, Arbeidersamfunnets plass 1, 0181 Oslo</p>
-			<div class="information__map" id="map">
-
-			</div>
-		</section>
-		<section class="ticket-modal">
-			<div class="ticket mobile">
-				<div class="ticket__header">
-					<div class="ticket__header-info">
-						<p class="ticket__header-info--name">LIZZO // Sentrum Scene</p>
-						<p class="ticket__header-info--date">Fri. 17 Feb 2023, 19:30</p>
-					</div>
-					<button class="ticket-modal__close-button"><img src="./assets/icons/closeButton.svg" alt=""></button>
+	<div class="body-information">
+		<!-- <header class="information__header">
+			<div class="information__header--overlay"></div>
+			<div class="information__header--text">
+				<p class="header-information-name">Lizzo: The Special Tour</p>
+				<p class="header-information-venue">Sentrum Scene</p>
+				<p class="header-information-date">February 17th, 2023</p>
+				<div class="header-information__image-small">
+					<img src="./assets/images/Lizzo.jpeg" alt="">
 				</div>
-				<div class="ticket-items">
-					<div class="ticket-item promo-code">
-						<input type="text" placeholder="Enter code">
-					</div>
+				<button class="header-information-button">Get Tickets</button>
+			</div>
+		</header>
+		<main class="information__main">
+			<section class="information__information">
+				<h3>Information</h3>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores perferendis, aut qui, et minus hic harum odit mollitia veniam doloribus exercitationem! Veritatis iste labore, eum rerum quod repellendus suscipit quisquam sed quo deleniti totam est natus id distinctio esse obcaecati alias ex sapiente, ratione, exercitationem possimus assumenda consequuntur voluptatibus officiis? Et ab ipsa nisi iusto obcaecati! A, sunt ipsam sequi explicabo hic exercitationem nesciunt suscipit architecto fuga, quisquam aperiam repellendus nostrum, illum natus? Maiores error laboriosam laudantium ratione dolores nulla itaque numquam expedita repellendus qui animi ipsa voluptatem, eligendi officia eveniet eos tenetur quis quaerat tempore iste saepe. Cum, adipisci!</p>
+				<div class="information__times">
+					<p>Event start: 19:30</p>
+					<p>Door open: 18:30</p>
+					<p>Duration: 90min</p>
+				</div>
+			</section>
 	
-					<div class="ticket-item">
-						<div class="ticket-item--top">
-							<p class="ticket-type">Ordinary</p>
-							<div class="ticket-counter">
-								<button class="ticket-counter__buttonLess">-</button>
-								<div class="ticket-counter__count">0</div>
-								<button class="ticket-counter__buttonMore">+</button>
+			<section class="information__location">
+				<h3>Location</h3>
+				<p><span class="information__location--venue">Sentrum Scene</span>, Arbeidersamfunnets plass 1, 0181 Oslo</p>
+				<div class="information__map" id="map">
+	
+				</div>
+			</section>
+			<section class="ticket-modal">
+				<div class="ticket mobile ticket-mobile">
+					<div class="ticket__header">
+						<div class="ticket__header-info">
+							<p class="ticket__header-info--name">LIZZO // Sentrum Scene</p>
+							<p class="ticket__header-info--date">Fri. 17 Feb 2023, 19:30</p>
+						</div>
+						<button class="ticket-modal__close-button"><img src="./assets/icons/closeButton.svg" alt=""></button>
+					</div>
+					<div class="ticket-items">
+						<div class="ticket-item promo-code">
+							<input type="text" placeholder="Enter code">
+						</div>
+		
+						<div class="ticket-item">
+							<div class="ticket-item--top">
+								<p class="ticket-type">Ordinary</p>
+								<div class="ticket-counter">
+									<button class="ticket-counter__buttonLess">-</button>
+									<div class="ticket-counter__count">0</div>
+									<button class="ticket-counter__buttonMore">+</button>
+									</div>
+							</div>
+							<div class="ticket-price">NOK 400</div>
+						</div>
+		
+						<div class="ticket-item">
+							<div class="ticket-item--top">
+								<p class="ticket-type">Student</p>
+								<div class="ticket-counter">
+									<button class="ticket-counter__buttonLess">-</button>
+									<div class="ticket-counter__count">0</div>
+									<button class="ticket-counter__buttonMore">+</button>
 								</div>
+							</div>
+							<div class="ticket-price">NOK 300</div>
 						</div>
-						<div class="ticket-price">NOK 400</div>
-					</div>
-	
-					<div class="ticket-item">
-						<div class="ticket-item--top">
-							<p class="ticket-type">Student</p>
-							<div class="ticket-counter">
-								<button class="ticket-counter__buttonLess">-</button>
-								<div class="ticket-counter__count">0</div>
-								<button class="ticket-counter__buttonMore">+</button>
+		
+						<div class="ticket-item sold-out">
+							<div class="ticket-item--top">
+								<p class="ticket-type">Early bird</p>
+								<div class="ticket-counter">
+									<button class="ticket-counter__buttonLess">-</button>
+									<div class="ticket-counter__count">0</div>
+									<button class="ticket-counter__buttonMore">+</button>
+								</div>
+							</div>
+							<div class="ticket-item--bottom">
+								<div class="ticket-price">NOK 250</div>
+								<div class="ticket--sold-out">Sold out</div>
 							</div>
 						</div>
-						<div class="ticket-price">NOK 300</div>
-					</div>
-	
-					<div class="ticket-item sold-out">
-						<div class="ticket-item--top">
-							<p class="ticket-type">Early bird</p>
-							<div class="ticket-counter">
-								<button class="ticket-counter__buttonLess">-</button>
-								<div class="ticket-counter__count">0</div>
-								<button class="ticket-counter__buttonMore">+</button>
-							</div>
+		
+						<div class="ticket-total">
+							NOK 0,00
 						</div>
-						<div class="ticket-item--bottom">
-							<div class="ticket-price">NOK 250</div>
-							<div class="ticket--sold-out">Sold out</div>
-						</div>
-					</div>
-	
-					<div class="ticket-total">
-						NOK 0,00
-					</div>
-					<button class="ticket__button-check-out">
-						Check out
-					</button>
+						<button class="ticket__button-check-out">
+							Check out
+						</button>
+				</div>
 			</div>
 			<div class="ticket-desktop">
 				<img src="./assets/images/Lizzo.jpeg" alt="">
@@ -117,9 +118,8 @@
 					<p>NOK300</p>
 				</div>
 			</div>
-		</div>
-		</section>
-	</main> -->
-	<footer>EventsInTown</footer>
+			</section>
+		</main> -->
+	</div> 
 </body>
 </html>
