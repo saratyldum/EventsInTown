@@ -3,6 +3,13 @@ export default function tickets() {
 	const ticketModal = document.querySelector('.ticket-modal');
 	const closeButton = document.querySelector('.ticket-modal__close-button');
 	const overlay = document.querySelector('.information__header--overlay');
+	const addTicket = document.querySelector('ticket-counter__buttonMore')
+	const removeTicket = document.querySelector('ticket-counter__buttonLess');
+	const totalPrice = document.querySelector('.ticket-total');
+	const checkOut = document.querySelector('.ticket__button-check-out');
+
+	let ticketsChosen;
+	
 
 	ticketButton.addEventListener('click', handleButtonClick);
 	closeButton.addEventListener('click', handleButtonClick);
