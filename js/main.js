@@ -34,7 +34,10 @@ if(categories !==null) {
 		
 		window.addEventListener('keyup', async (e) => {
 			if (e.key === 'Enter') {
-				const [city, classificationName, date] = fetchVariables(e);
+				let [city, classificationName, date] = fetchVariables(e);
+				if(city == '' ) {
+					city = 'oslo'
+				}
 				fetchEvents(city, classificationName, date);
 			};
 		});
