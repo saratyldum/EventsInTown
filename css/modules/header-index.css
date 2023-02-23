@@ -41,6 +41,10 @@
 	background-color: black;
 }
 
+input.navigation-search__input {
+	background-color: black;
+}
+
 .navigation-search__input:focus::placeholder {
 	color: gray;
 }
@@ -77,6 +81,10 @@
 @media screen and (min-width: 768px) {
 	.navigation-search p, .navigation-search__input {
 		font-size: 1.5rem;
+	}
+
+	.header--index {
+		margin: 2rem;
 	}
 }
 
