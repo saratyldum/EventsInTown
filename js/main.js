@@ -32,17 +32,13 @@ if(categories !==null) {
 		});
 	}
 
-
-if(eventCards !== null) {
+	if(eventCards !== null) {
 	eventCards.forEach(event => {
 		event.addEventListener('click', (e) => {
-				const eventClicked = e.target.parentElement.children[0].textContent;
-
-				const body = renderEventInformation(eventClicked, events)
+				document.cookie =  e.target.parentElement.children[0].textContent;
+			
+				renderEventInformation(events);
 			 });
 			// generateMap(events);
 		})
 	}
-
-
-

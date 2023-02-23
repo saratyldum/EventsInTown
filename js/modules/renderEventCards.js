@@ -37,7 +37,7 @@ export default async function renderEventCards(events) {
 	
 			const html = `
 			<div class="event">
-				<a href="./information.html">
+				<a href="#">
 					<div class="event__image"><img src="${image.url}" alt="${event.name}"></div>
 					<div class="event__information">
 						<p class="event__information-name">${event.name}</p>
