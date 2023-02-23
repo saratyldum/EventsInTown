@@ -1,7 +1,9 @@
 export default function fetchVariables(e) {
 	const cityValue = document.querySelector('.navigation-search__input').value;
 	const chosenCategory = e.target.id;
-	const dateValue = document.querySelector('input[type="date"]').value + 'T00:00:00Z';
+	const dateValue = document.querySelector('input[type="date"]').value;
 
-	return [cityValue, chosenCategory, dateValue];
+	const date = new Date(dateValue).toISOString().split('.')[0]+"Z"
+
+	return [cityValue, chosenCategory, date];
 }
