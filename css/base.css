@@ -10,3 +10,7 @@ html {
 body {
 	background-color: black;
 }
+
+.hidden {
+	display: none;
+}
