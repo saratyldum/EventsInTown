@@ -35,8 +35,12 @@ if(categories !==null) {
 		window.addEventListener('keyup', async (e) => {
 			if (e.key === 'Enter') {
 				let [city, classificationName, date] = fetchVariables(e);
-				if(city == '' ) {
+				if(city == '') {
 					city = 'oslo'
+				}
+
+				if(classificationName = '') {
+					classificationName = ''
 				}
 				fetchEvents(city, classificationName, date);
 			};
