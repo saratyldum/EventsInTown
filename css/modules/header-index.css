@@ -41,9 +41,10 @@
 	background-color: black;
 }
 
-input.navigation-search__input {
+input.navigation-search__input, input.dateInput {
 	background-color: black;
 }
+
 
 .navigation-search__input:focus::placeholder {
 	color: gray;
