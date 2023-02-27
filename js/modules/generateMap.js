@@ -1,4 +1,4 @@
-export default function generateMap(lat, long) {
+export default function generateMap(lat, long, venue) {
 	const coordinates = [lat, long];
 
 	const map = L.map('map').setView(coordinates, 13);
@@ -8,5 +8,8 @@ export default function generateMap(lat, long) {
 		subdomains:['mt0','mt1','mt2','mt3']
 	}).addTo(map);
 
-	const marker = L.marker(coordinates).addTo(map).openPopup();;
+	const marker = L.marker(coordinates).addTo(map)
+	.bindPopup(venue)
+	.openPopup();;
+
 }
