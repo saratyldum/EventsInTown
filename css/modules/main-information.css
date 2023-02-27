@@ -13,8 +13,12 @@
 }
 
 #map {
-	height: 40vh;
-	display: none;
+	height: 50vh;
+	display: block;
+}
+
+#map span {
+	color: black;
 }
 
 .overlay {
@@ -24,6 +28,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+	z-index: 50;
 }
 
 @media screen and (min-width: 992px) {

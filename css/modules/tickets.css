@@ -7,7 +7,7 @@
 	left: 0;
 	align-items: center;
 	background-color: black;
-	z-index: 6;
+	z-index: 999;
 	border: 1px solid var(--primary-color);
 }
 
