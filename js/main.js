@@ -1,23 +1,27 @@
 import fetchEvents from "./modules/fetchEvents.js";
-import renderEventCards from "./modules/renderEventCards.js";
 import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
-import generateMap from "./modules/generateMap.js";
-import handleResponse from "./modules/fetchEvents.js";
 import chosenEvent from "./modules/chosenEvent.js";
+import { clearInformationLocal } from "./modules/localStorage.js";
+
+if (window.location.pathname == '/EventsInTown/') {
+	clearInformationLocal()
+}
+
 
 const categories = document.querySelectorAll('.category');
 const events = await fetchEvents('oslo');
 const eventCards = document.querySelectorAll('.event');
 const	date = document.querySelector('input[type="date"]');
 
-const today = new Date().toISOString().split('T')[0];
+if(date !== null) {
+	const today = new Date().toISOString().split('T')[0];
+	date.setAttribute('min', today)
+	date.setAttribute('value', today)
+}
 
-date.setAttribute('min', today)
-date.setAttribute('value', today)
 
-
-// generateMap(59.911491, 10.757933)
+// navigator.geolocation.getCurrentPosition();
 
 /**
  * Fetching events based on parameteres clicked or chosen
@@ -47,12 +51,19 @@ if(categories !==null) {
 		});
 	}
 
-	if(eventCards !== null) {
-	eventCards.forEach(event => {
-		event.addEventListener('click', (e) => {
-			const eventChosen = chosenEvent(e, events)
-				renderEventInformation(eventChosen);
-			 });
-			// generateMap(events);
+	// import { eventInformation } from "./modules/chosenEvent.js";
+
+if(eventCards !== null) {
+eventCards.forEach(event => {
+	event.addEventListener('click', (e) => {
+		clearInformationLocal()
+		chosenEvent(e, events);
+			});
 		})
 	}
+	
+	
+	if (window.location.hash === '#body-information') {
+		renderEventInformation();
+	}
+
