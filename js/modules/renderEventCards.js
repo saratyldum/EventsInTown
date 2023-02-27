@@ -1,7 +1,9 @@
-export default async function renderEventCards(events) {
+export default function renderEventCards(events) {
 	if(events !== null) {
 
 		const main = document.querySelector('.grid');
+		
+
 		let formattedDate;
 	
 		function formatDate(event) {
@@ -34,10 +36,11 @@ export default async function renderEventCards(events) {
 			const image = event.images.find(image => {
 				return image.ratio === '4_3'
 			});
+			// information.html#body-information
 	
 			const html = `
 			<div class="event">
-				<a href="#">
+				<a href="information.html#body-information">
 					<div class="event__image"><img src="${image.url}" alt="${event.name}"></div>
 					<div class="event__information">
 						<p class="event__information-name">${event.name}</p>
