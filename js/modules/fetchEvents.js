@@ -1,7 +1,5 @@
-import fetchVariables from "./fetchVariables.js";
 import renderEventCards from "./renderEventCards.js";
 
-const categories = document.querySelectorAll('.category');
 const errorElement = document.querySelector('.errorBox');
 
 export default async function fetchEvents(city='oslo', classificationName='', date='' ) {
@@ -37,8 +35,7 @@ async function handleResponse(response) {
 			renderEventCards(events);
 			return events;
 		} else {
-			handleError('Events could not be found')
-			throw new Error('Events could not be found');
+			throw new Error(`Events could not be found (${response.status})`);
 		}		
 	}else if (response.status === 404) {
 		throw new Error(`Events could not be found (${response.status})`);
