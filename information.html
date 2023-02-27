@@ -13,16 +13,16 @@
 	crossorigin=""></script>
 	<script type="module" src="./js/main.js"></script>
 </head>
-<body>
+<body id="body-information">
 	<div class="information__header--overlay hidden"></div>
 	<div class="body-information">
 		<header class="information__header">
 			<div class="information__header--text">
-				<p class="header-information-name">Lizzo: The Special Tour</p>
-				<p class="header-information-venue">Sentrum Scene</p>
-				<p class="header-information-date">February 17th, 2023</p>
+				<p class="header-information-name"><span id="eventName"></span></p>
+				<p class="header-information-venue"><span id="venueHeader"></span></p>
+				<p class="header-information-date"><span id="eventDate"></span></p>
 				<div class="header-information__image-small">
-					<img src="./assets/images/Lizzo.jpeg" alt="">
+					<img id="eventImage" src="./assets/images/Lizzo.jpeg" alt="">
 				</div>
 				<button class="header-information-button">Get Tickets</button>
 			</div>
@@ -32,7 +32,7 @@
 				<h3>Information</h3>
 				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores perferendis, aut qui, et minus hic harum odit mollitia veniam doloribus exercitationem! Veritatis iste labore, eum rerum quod repellendus suscipit quisquam sed quo deleniti totam est natus id distinctio esse obcaecati alias ex sapiente, ratione, exercitationem possimus assumenda consequuntur voluptatibus officiis? Et ab ipsa nisi iusto obcaecati! A, sunt ipsam sequi explicabo hic exercitationem nesciunt suscipit architecto fuga, quisquam aperiam repellendus nostrum, illum natus? Maiores error laboriosam laudantium ratione dolores nulla itaque numquam expedita repellendus qui animi ipsa voluptatem, eligendi officia eveniet eos tenetur quis quaerat tempore iste saepe. Cum, adipisci!</p>
 				<div class="information__times">
-					<p>Event start: 19:30</p>
+					<p>Event start: <span id="eventStartTime"></span></p>
 					<p>Door open: 18:30</p>
 					<p>Duration: 90min</p>
 				</div>
@@ -40,7 +40,7 @@
 	
 			<section class="information__location">
 				<h3>Location</h3>
-				<p><span class="information__location--venue">Sentrum Scene</span>, Arbeidersamfunnets plass 1, 0181 Oslo</p>
+				<p><span class="information__location--venue"><span id="venueLocation"></span></span>, <span id="venueAddress"></span>, <span id="venuePostalCode"></span> <span id="venueCity"></span></p>
 				<div class="information__map" id="map">
 	
 				</div>
