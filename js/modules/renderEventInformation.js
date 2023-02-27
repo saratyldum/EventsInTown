@@ -1,6 +1,8 @@
 import generateMap from "./generateMap.js";
 import {getInformationFromLocal} from "./localStorage.js";
 import tickets from "./tickets.js";
+import {clearInformationLocal} from "./localStorage.js";
+
 
 
 
@@ -102,6 +104,7 @@ export default function renderEventInformation() {
 			header.style.backgroundImage =`url('${eventImage}')`;
 
 			generateMap(latitude, longitude)
+			clearInformationLocal()
 
 			
 	
