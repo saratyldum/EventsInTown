@@ -17,9 +17,10 @@
 	display: block;
 }
 
-#map span {
+#map span, #map .leaflet-popup-content {
 	color: black;
 }
+
 
 .overlay {
 	background-color: rgba(0, 0, 0, 0.5);
