@@ -2,15 +2,9 @@ import fetchEvents from "./modules/fetchEvents.js";
 import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
 import chosenEvent from "./modules/chosenEvent.js";
-import { clearInformationLocal } from "./modules/localStorage.js";
-
-if (window.location.pathname == '/EventsInTown/') {
-	clearInformationLocal()
-}
-
 
 const categories = document.querySelectorAll('.category');
-const events = await fetchEvents('oslo');
+const events = await fetchEvents();
 const eventCards = document.querySelectorAll('.event');
 const	date = document.querySelector('input[type="date"]');
 
@@ -22,6 +16,17 @@ if(date !== null) {
 
 
 // navigator.geolocation.getCurrentPosition();
+// navigator.geolocation.getCurrentPosition(success);
+
+// const coordinats =async function success(pos) {
+// 	const {latitude, longitude} = pos.coords;
+// 	const coordinates = new Array(latitude, longitude).toString();
+// 	return coordinates;
+// }
+
+// const events = await fetchEvents(coordinats);
+ 
+
 
 /**
  * Fetching events based on parameteres clicked or chosen
@@ -33,7 +38,13 @@ if(categories !==null) {
 			if(city == '') {
 				city = 'oslo'
 			}
-			fetchEvents(city, classificationName, date);
+			const events = await fetchEvents(city, classificationName, date);
+			const eventCards = document.querySelectorAll('.event');
+			eventCards.forEach(event => {
+				event.addEventListener('click', (e) => {
+					chosenEvent(e, events);
+				});
+			})
 		})});	
 		
 		window.addEventListener('keyup', async (e) => {
@@ -46,24 +57,28 @@ if(categories !==null) {
 				if(classificationName = '') {
 					classificationName = ''
 				}
-				fetchEvents(city, classificationName, date);
+				const events = await fetchEvents(city, classificationName, date);
+				const eventCards = document.querySelectorAll('.event');
+				eventCards.forEach(event => {
+					event.addEventListener('click', (e) => {
+						chosenEvent(e, events);
+					});
+				})
+
 			};
 		});
 	}
-
-	// import { eventInformation } from "./modules/chosenEvent.js";
-
+	
 if(eventCards !== null) {
-eventCards.forEach(event => {
-	event.addEventListener('click', (e) => {
-		clearInformationLocal()
-		chosenEvent(e, events);
-			});
-		})
-	}
-	
-	
-	if (window.location.hash === '#body-information') {
-		renderEventInformation();
-	}
+	eventCards.forEach(event => {
+		event.addEventListener('click', (e) => {
+			chosenEvent(e, events);
+		});
+	})
+}
+			
+if (window.location.hash === '#body-information') {
+	renderEventInformation();
+}
+
 
