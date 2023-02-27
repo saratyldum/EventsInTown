@@ -35,7 +35,7 @@ export default function renderEventInformation() {
 
 		
 	
-		const [eventName, eventVenue, eventDate, eventImage, eventStartTime, address, postalCode, city, latitude, longitude] = allEventINFO;
+		const [eventName, eventVenue, eventDate, eventImage, eventStartTime, address, postalCode, city, latitude, longitude, imageHeader] = allEventINFO;
 
 		
 			let formattedDate;
@@ -58,7 +58,7 @@ export default function renderEventInformation() {
 			venueHeader.textContent = eventVenue;
 			venueLocation.textContent = eventVenue;
 			date.textContent = formattedDate;
-			image.setAttribute("src", eventImage);
+			image.setAttribute("src", imageHeader.url);
 			startTime.textContent = eventStartTime;
 			venueAddress.textContent = address;
 			venuePostalCode.textContent = postalCode;
@@ -101,9 +101,9 @@ export default function renderEventInformation() {
 		
 			// body.insertAdjacentHTML('beforeend', htmlInformation);
 			const header = document.querySelector('.information__header')
-			header.style.backgroundImage =`url('${eventImage}')`;
+			header.style.backgroundImage =`url('${imageHeader.url}')`;
 
-			generateMap(latitude, longitude)
+			generateMap(latitude, longitude, eventVenue)
 			clearInformationLocal()
 
 			
