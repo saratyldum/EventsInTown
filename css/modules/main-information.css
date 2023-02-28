@@ -21,6 +21,10 @@
 	color: black;
 }
 
+.information__map {
+	z-index: 2;
+}
+
 
 .overlay {
 	background-color: rgba(0, 0, 0, 0.5);
@@ -35,11 +39,11 @@
 @media screen and (min-width: 992px) {
 	.information__main {
 		display: flex;
-		gap: 2rem;
+		gap: 6rem;
 	}
 
 	.information__information {
-		width: 60vw;
+		width: 50vw;
 	}
 
 	.information__location {
