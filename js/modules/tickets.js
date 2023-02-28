@@ -84,8 +84,12 @@ export default function tickets() {
 		const priceString = e.target.parentElement.parentElement.nextElementSibling.textContent;
 		const priceChosen = Number(priceString.match(/(\d+)/)[0]);
 		
-		(buttonClicked.classList.contains('ticket-counter__buttonMore') && ticketsChosen >= 0) ? (total += priceChosen) : (total -= priceChosen);
-		totalPrice.textContent = Math.max(0, total);
+		/**
+		 * @todo fiks decrementing
+		 */
+		if(ticketsChosen >= 0)
+		buttonClicked.classList.contains('ticket-counter__buttonMore') ? (total += priceChosen) : (total -= priceChosen);
 
+		totalPrice.textContent = Math.max(0, total);
    }
 }
