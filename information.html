@@ -50,7 +50,7 @@
 				<div class="ticket mobile ticket-mobile">
 					<div class="ticket__header">
 						<div class="ticket__header-info">
-							<p class="ticket__header-info--name">LIZZO // Sentrum Scene</p>
+							<p class="ticket__header-info--name">KONSERT // Venue</p>
 							<p class="ticket__header-info--date">Fri. 17 Feb 2023, 19:30</p>
 						</div>
 						<button class="ticket-modal__close-button"><img src="./assets/icons/closeButton.svg" alt=""></button>
@@ -60,7 +60,7 @@
 							<input type="text" placeholder="Enter code">
 						</div>
 		
-						<div class="ticket-item">
+						<div class="ticket-item ticket-item-active">
 							<div class="ticket-item--top">
 								<p class="ticket-type">Ordinary</p>
 								<div class="ticket-counter">
@@ -69,10 +69,10 @@
 									<button class="ticket-counter__buttonMore">+</button>
 									</div>
 							</div>
-							<div class="ticket-price">NOK 400</div>
+							<div class="ticket-price">NOK <span class="ticket-price-amount">400</span></div>
 						</div>
 		
-						<div class="ticket-item">
+						<div class="ticket-item ticket-item-active">
 							<div class="ticket-item--top">
 								<p class="ticket-type">Student</p>
 								<div class="ticket-counter">
@@ -81,42 +81,30 @@
 									<button class="ticket-counter__buttonMore">+</button>
 								</div>
 							</div>
-							<div class="ticket-price">NOK 300</div>
+							<div class="ticket-price">NOK <span class="ticket-price-amount">300</span></div>
 						</div>
 		
 						<div class="ticket-item sold-out">
 							<div class="ticket-item--top">
 								<p class="ticket-type">Early bird</p>
 								<div class="ticket-counter">
-									<button class="ticket-counter__buttonLess">-</button>
+									<button class="ticket-counter__buttonLess last-child">-</button>
 									<div class="ticket-counter__count">0</div>
-									<button class="ticket-counter__buttonMore">+</button>
+									<button class="ticket-counter__buttonMore last-child">+</button>
 								</div>
 							</div>
 							<div class="ticket-item--bottom">
-								<div class="ticket-price">NOK 250</div>
+								<div class="ticket-price">NOK <span class="ticket-price-amount">250</span></div>
 								<div class="ticket--sold-out">Sold out</div>
 							</div>
 						</div>
 		
 						<div class="ticket-total">
-							NOK 0,00
+							NOK <span class="ticket-total-sum">0</span>
 						</div>
 						<button class="ticket__button-check-out">
 							Check out
 						</button>
-				</div>
-			</div>
-			<div class="ticket-desktop">
-				<img src="./assets/images/Lizzo.jpeg" alt="">
-				<p>Order summary</p>
-				<div class="order-item">
-					<p>1 x Student</p>
-					<p>NOK 300</p>
-				</div>
-				<div class="order-total">
-					<p>Total</p>
-					<p>NOK300</p>
 				</div>
 			</div>
 			</section>
