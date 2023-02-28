@@ -127,6 +127,7 @@ input.navigation-search__input, input.dateInput {
 		padding: 0.5rem 2rem;
 		width: 10.5rem;
 		cursor: pointer;
+		transition: all 0.2s ease-in-out;
 	}
 
 	.category:hover {

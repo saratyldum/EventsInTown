@@ -69,6 +69,8 @@
 		border-bottom: none;
 		border-radius: 10px;
 		border: 1px solid var(--border-color);
+		transition: all 0.2s ease-in-out;
+		transform: scale(1, 1);
 	}
 
 	.event-image {
@@ -80,8 +82,11 @@
 		gap: 0;
 	}
 
-	.event a:hover {
-		box-shadow: 2px 2px 25px var(--primary-color-RGBA)
+	.event:hover {
+		box-shadow: 2px 2px 25px var(--primary-color-RGBA);
+		transform: scale(1.1, 1.1);
+
+
 	}
 
 	.event__image img {
