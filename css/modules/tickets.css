@@ -96,8 +96,12 @@
 	cursor: pointer;
 }
 
-.ticket-counter__buttonLess:not(:last-child):hover {
+.ticket-counter__buttonLess:hover {
 	background-color: gray;
+}
+
+.ticket-counter__buttonLess.last-child:hover, .ticket-counter__buttonMore.last-child:hover {
+	background-color: lightgray;
 }
 
 .ticket-counter__buttonMore {
@@ -108,7 +112,7 @@
 	cursor: pointer;
 }
 
-.ticket-counter__buttonMore:not(:last-child):hover {
+.ticket-counter__buttonMore:hover {
 	background-color: var(--primary-color-RGBA);
 }
 
@@ -121,13 +125,6 @@
 	justify-content: space-between;
 }
 
-.ticket--sold-out {
-	padding: 0.3rem 1rem;
-	background-color: lightgray;
-	border-radius: 5px;
-	margin: 0.5rem 2rem 0.5rem 0;
-}
-
 .sold-out {
 	opacity: 0.5;
 }
@@ -135,6 +132,7 @@
 .sold-out button {
 	background-color: lightgray;
 	color: black;
+	cursor: auto;
 }
 
 .ticket-total {
