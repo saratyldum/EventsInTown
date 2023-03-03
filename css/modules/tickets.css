@@ -184,44 +184,5 @@
 		left: 50%;
 		transform: translateX(-50%);
 	}
-	/* .ticket-modal {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		width
-	}
 
-	.ticket-total {
-		display: none;
-	}
-
-	.ticket-mobile {
-		/* display: flex;
-		flex-direction: row; */
-		/* width: 70vw; */
-	/* }
-
-	.ticket-desktop  {  */
-		/* display: flex;
-		flex-direction: column;
-		justify-content: center;
-		height: 100%;
-		width: 100%;
-		margin-top: -4rem;
-	}
-
-	.ticket-desktop img {
-		width: 100%;
-	}
-
-	.ticket-items {
-		display: inline;
-	}
-
-	.ticket-header {
-		/* position: absolute;
-		top: 1rem; */
-	} 
 }
-
-

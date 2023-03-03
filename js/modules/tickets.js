@@ -19,6 +19,7 @@ export default function tickets() {
 
 	ticketButton.addEventListener('click', handleTicketButtonClick);
 	closeButton.addEventListener('click', handleTicketButtonClick);
+	checkOut.addEventListener('click', handleTicketButtonClick);
 	
 	addTicket.forEach(button => {
 		button.addEventListener('click', handleAddButtonClick);
@@ -27,6 +28,9 @@ export default function tickets() {
 	removeTicket.forEach(button => {
 		button.addEventListener('click', handleRemoveButtonClick);
 	})
+
+	removeTicket[2].removeEventListener('click', handleRemoveButtonClick);
+	addTicket[2].removeEventListener('click', handleAddButtonClick);
 
 	function handleTicketButtonClick() {
 		ticketModal.classList.toggle('hidden');
@@ -110,6 +114,5 @@ export default function tickets() {
 		total = Math.max(0, allPrices.reduce((accumulator, currentValue) => accumulator + currentValue, initalValue));	
 
 		totalPrice.textContent = total;
-
    }
 }
