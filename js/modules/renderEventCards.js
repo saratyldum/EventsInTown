@@ -2,8 +2,6 @@ export default function renderEventCards(events) {
 	if(events !== null) {
 
 		const main = document.querySelector('.grid');
-		
-
 		let formattedDate;
 	
 		function formatDate(event) {
@@ -18,14 +16,6 @@ export default function renderEventCards(events) {
 			const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
 			formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
 			}
-		
-		/**
-		 * @TODO gjør at hvert event kun synes en gang:
-		 * 
-		 let eventsNoDuplicates = events;
-		 eventsNoDuplicates = events.filter((value, index, self) => index === self.findIndex((t) => (t.name === value.name)))
-		 */
-	
 	
 		events.forEach(event => {
 			formatDate(event)
@@ -36,7 +26,6 @@ export default function renderEventCards(events) {
 			const image = event.images.find(image => {
 				return image.ratio === '4_3'
 			});
-			// information.html#body-information
 	
 			const html = `
 			<div class="event">

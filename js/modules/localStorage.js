@@ -1,8 +1,6 @@
-		
-
 		let eventsStorageName = "clickedEventInformation";
 		let eventInformation = getInformationFromLocal();
-					
+						
 		export function getInformationFromLocal() {
 			const storedEventInformation = window.localStorage.getItem(eventsStorageName);
 		
