@@ -60,6 +60,10 @@ input.navigation-search__input, input.dateInput {
 	align-items: center;
 }
 
+.navigation__categories .active {
+	border-bottom: 1px solid var(--primary-color);
+}
+
 .navigation__arrow-left, .navigation__arrow-right {
 	width: 15px
 }
@@ -110,8 +114,6 @@ input.navigation-search__input, input.dateInput {
 		font-size: 2rem;
 	}
 
-	
-
 	.navigation__arrow-left, .navigation__arrow-right {
 		display: none;
 	}
@@ -133,5 +135,9 @@ input.navigation-search__input, input.dateInput {
 	.category:hover {
 		background-color: var(--border-color);
 		cursor: pointer;
-}
+	}
 
+	.navigation__categories .active {
+		border: 1px solid var(--primary-color);
+	}
+}

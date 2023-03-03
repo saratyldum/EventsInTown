@@ -14,6 +14,9 @@ if(date !== null) {
 	date.setAttribute('value', today)
 }
 
+/**
+ * local storage på byen som er søkt på og dato så det ikke refreshes når man går tilbake
+ */
 
 // navigator.geolocation.getCurrentPosition();
 // navigator.geolocation.getCurrentPosition(success);
@@ -34,10 +37,12 @@ if(date !== null) {
 if(categories !==null) {
 	categories.forEach(category => {
 		category.addEventListener('click', async (e) => {
+			categories.forEach((el) => el.classList.remove("active"));
+    		e.target.classList.toggle("active");
+
 			let [city, classificationName, date] = fetchVariables(e);
-			if(city == '') {
-				city = 'oslo'
-			}
+			if(city == '') city = 'oslo';
+
 			const events = await fetchEvents(city, classificationName, date);
 			const eventCards = document.querySelectorAll('.event');
 			eventCards.forEach(event => {
@@ -45,18 +50,15 @@ if(categories !==null) {
 					chosenEvent(e, events);
 				});
 			})
-		})});	
+		})
+	});	
 		
 		window.addEventListener('keyup', async (e) => {
 			if (e.key === 'Enter') {
 				let [city, classificationName, date] = fetchVariables(e);
-				if(city == '') {
-					city = 'oslo'
-				}
-
-				if(classificationName = '') {
-					classificationName = ''
-				}
+				if(city == '') city = 'oslo' //ENDRE SÅ DET IKKE ER OSLO, MEN BASERT PÅ GEOLOCATION
+				if(classificationName = '') classificationName = '';
+	
 				const events = await fetchEvents(city, classificationName, date);
 				const eventCards = document.querySelectorAll('.event');
 				eventCards.forEach(event => {
@@ -64,7 +66,6 @@ if(categories !==null) {
 						chosenEvent(e, events);
 					});
 				})
-
 			};
 		});
 	}
