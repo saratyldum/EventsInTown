@@ -1,15 +1,3 @@
-import {getInformationFromLocal} from "./localStorage.js";
-
-		/**
-	 * GJØR TICKET INFO DYNAMIC
-	 */
-	// let eventInformation = getInformationFromLocal();
-	// let allEventINFO = [];
-
-	// eventInformation.forEach(info => {
-	// 	allEventINFO.push(info.name);
-	// });
-
 export default function tickets() {
 	const ticketButton = document.querySelector('.header-information-button');
 	const ticketModal = document.querySelector('.ticket-modal');
@@ -21,12 +9,13 @@ export default function tickets() {
 	const checkOut = document.querySelector('.ticket__button-check-out');
 	
 	let ticketsChosen;
-	let isOpen = false;	
 	let buttonClicked;
 	let ticketCounter;
 	let ticketChosen;
-	let total = 0;
-
+	let total;
+	let allPrices= [];
+	let cart = [];
+	let chosenItem;
 
 	ticketButton.addEventListener('click', handleTicketButtonClick);
 	closeButton.addEventListener('click', handleTicketButtonClick);
@@ -40,38 +29,69 @@ export default function tickets() {
 	})
 
 	function handleTicketButtonClick() {
-		isOpen = !isOpen;
 		ticketModal.classList.toggle('hidden');
 		overlay.classList.toggle('hidden');
 	}
 
 	function handleAddButtonClick(e) {
-		isOpen = true;
 		buttonClicked = e.target;
+		addItem(buttonClicked);
 		changeTicketCount(buttonClicked);
 		changeBorder(buttonClicked);
-		updateTotal(e, buttonClicked);
+		updateTotal(buttonClicked);
 	}
 
 	function handleRemoveButtonClick(e) {
 		buttonClicked = e.target;
-		changeTicketCount(buttonClicked);
-		changeBorder(buttonClicked);
-		updateTotal(e, buttonClicked);
+		ticketsChosen = Number(buttonClicked.nextElementSibling.textContent);
+		if(ticketsChosen > 0) {
+			removeItem(buttonClicked);
+			changeTicketCount(buttonClicked);
+			changeBorder(buttonClicked);
+			updateTotal(buttonClicked);
+		}
+	}
+
+	function addItem(buttonClicked) {
+		let price = Number(buttonClicked.parentElement.dataset.price)
+		let title = buttonClicked.parentElement.dataset.title;
+		let id = buttonClicked.parentElement.dataset.id;
+
+		chosenItem = cart.find(cartItem => cartItem.id === id);
+
+		if (cart.includes(chosenItem)) {
+			chosenItem.quantity++;
+		} else {
+			let cartItem = {
+				title: title,
+				price: price,
+				id: id,
+				quantity: 1,
+			}
+			cart.push(cartItem);
+		}
+	}
+
+	function removeItem(buttonClicked) {
+		let id = buttonClicked.parentElement.dataset.id;
+		chosenItem = cart.find(cartItem => cartItem.id === id);
+
+		if (cart.includes(chosenItem) && chosenItem.quantity > 0) {
+			chosenItem.quantity--;
+		} else {
+			return
+		}
 	}
 
 	function changeTicketCount(buttonClicked) {
-		if(buttonClicked.classList.contains('ticket-counter__buttonMore')) {
-			ticketCounter = buttonClicked.previousElementSibling;	
-			ticketsChosen = Number(ticketCounter.textContent);
-			ticketsChosen++;
-			ticketCounter.textContent = ticketsChosen;
-		} else if(buttonClicked.classList.contains('ticket-counter__buttonLess') && ticketsChosen > 0) {
-			ticketCounter = buttonClicked.nextElementSibling;
-			ticketsChosen = Number(ticketCounter.textContent);
-			ticketsChosen--;
-			ticketCounter.textContent = Math.max(0, ticketsChosen);
-		}
+		let id = buttonClicked.parentElement.dataset.id;
+		chosenItem = cart.find(cartItem => cartItem.id === id);
+
+		buttonClicked.classList.contains('ticket-counter__buttonMore') ? ticketCounter = buttonClicked.previousElementSibling : ticketCounter = buttonClicked.nextElementSibling;
+
+		ticketsChosen = chosenItem.quantity;
+		ticketCounter.textContent = ticketsChosen
+
 	}
 
 	function changeBorder(buttonClicked) {
@@ -79,17 +99,17 @@ export default function tickets() {
 		ticketsChosen > 0 ? ticketChosen.style.borderColor = 'var(--primary-color)' :	ticketChosen.style.borderColor = 'var(--border-color)';
 	}
 
-	function updateTotal(e, buttonClicked) {
-		totalPrice.textContent = total;
-		const priceString = e.target.parentElement.parentElement.nextElementSibling.textContent;
-		const priceChosen = Number(priceString.match(/(\d+)/)[0]);
-		
-		/**
-		 * @todo fiks decrementing
-		 */
-		if(ticketsChosen >= 0)
-		buttonClicked.classList.contains('ticket-counter__buttonMore') ? (total += priceChosen) : (total -= priceChosen);
+	function updateTotal( buttonClicked) {
+		const initalValue = 0;
+		let price;
 
-		totalPrice.textContent = Math.max(0, total);
+		buttonClicked.classList.contains('ticket-counter__buttonMore') ? price = +Number(buttonClicked.parentElement.dataset.price) : price = -Number(buttonClicked.parentElement.dataset.price);
+
+		allPrices.push(price);
+
+		total = Math.max(0, allPrices.reduce((accumulator, currentValue) => accumulator + currentValue, initalValue));	
+
+		totalPrice.textContent = total;
+
    }
 }
