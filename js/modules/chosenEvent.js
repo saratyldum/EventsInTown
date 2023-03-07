@@ -1,7 +1,4 @@
-import {addEventInformation} from "./localStorage.js";
-import {storeInformationLocal} from "./localStorage.js";
-import {clearInformationLocal} from "./localStorage.js";
-
+import {addEventInformation, storeInformationLocal} from "./localStorage.js";
 
 export let ALLeventInformation = [];
 
@@ -30,11 +27,8 @@ export default function chosenEvent(e, events) {
 
 	ALLeventInformation.push(eventName, eventVenue, eventDate, eventImage, eventStartTime, address, postalCode, city, latitude, longitude, imageHeader);
 
-	let eventsStorageName = "clickedEventInformation";
-	clearInformationLocal()
 	addEventInformation([ALLeventInformation]);
 	storeInformationLocal();
-	const storedEventInformation = window.localStorage.getItem(eventsStorageName);
 }
 
 

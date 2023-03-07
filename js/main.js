@@ -2,11 +2,32 @@ import fetchEvents from "./modules/fetchEvents.js";
 import fetchVariables from "./modules/fetchVariables.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
 import chosenEvent from "./modules/chosenEvent.js";
+import { removeItemLocal, storeCityInformationLocal, addCity, cityStorageName, getInformationFromLocal } from "./modules/localStorage.js";
+
+let chosenCity = getInformationFromLocal(cityStorageName);
 
 const categories = document.querySelectorAll('.category');
-const events = await fetchEvents();
+removeItemLocal(cityStorageName)
+
+
+//bytt med geolocation
+navigator.geolocation.getCurrentPosition(getPosition);
+
+function getPosition(position) {
+		const {latitude, longitude} = position.coords;
+
+}
+
+
+
+addCity(chosenCity)
+storeCityInformationLocal()
+
+const events = await fetchEvents(chosenCity);
 const eventCards = document.querySelectorAll('.event');
 const	date = document.querySelector('input[type="date"]');
+const searchBox = document.querySelector('.navigation-search__input');
+
 
 if(date !== null) {
 	const today = new Date().toISOString().split('T')[0];
@@ -41,7 +62,7 @@ if(categories !==null) {
     		e.target.classList.toggle("active");
 
 			let [city, classificationName, date] = fetchVariables(e);
-			if(city == '') city = 'oslo';
+			if(city == '') city = cityStored;
 
 			const events = await fetchEvents(city, classificationName, date);
 			const eventCards = document.querySelectorAll('.event');
@@ -55,8 +76,14 @@ if(categories !==null) {
 		
 		window.addEventListener('keyup', async (e) => {
 			if (e.key === 'Enter') {
+				const value = searchBox.value;
+				// clearCityInformationLocal()
+				// removeItemLocal('cityStorage')
+				addCity(value)
+				storeCityInformationLocal()
+
 				let [city, classificationName, date] = fetchVariables(e);
-				if(city == '') city = 'oslo' //ENDRE SÅ DET IKKE ER OSLO, MEN BASERT PÅ GEOLOCATION
+				if(city == '') city = cityStored;
 				if(classificationName = '') classificationName = '';
 	
 				const events = await fetchEvents(city, classificationName, date);
@@ -79,7 +106,7 @@ if(eventCards !== null) {
 }
 			
 if (window.location.hash === '#body-information') {
-	renderEventInformation();
+	renderEventInformation(events);
 }
 
 

@@ -1,20 +1,16 @@
 import generateMap from "./generateMap.js";
-import {getInformationFromLocal} from "./localStorage.js";
+import {getInformationFromLocal, removeItemLocal, eventsStorageName} from "./localStorage.js";
 import tickets from "./tickets.js";
-import {clearInformationLocal} from "./localStorage.js";
-
-
-
-
 
 export default function renderEventInformation() {
 	tickets();
-	let eventInformation = getInformationFromLocal();
 	const body = document.querySelector('.body-information');	
+	let eventInformation = getInformationFromLocal(eventsStorageName);
 
 	let allEventINFO = [];
+
 	eventInformation.forEach(info => {
-		allEventINFO.push(info.name);
+		allEventINFO.push(info.info);
 	});
 
 		const name = document.querySelector('#eventName');
@@ -62,6 +58,6 @@ export default function renderEventInformation() {
 			const header = document.querySelector('.information__header')
 			header.style.backgroundImage =`url('${imageHeader.url}')`;
 
-			generateMap(latitude, longitude, eventVenue)
-			clearInformationLocal()
+			generateMap(latitude, longitude, eventVenue);
+			removeItemLocal('clickedEventInformation');
 }
