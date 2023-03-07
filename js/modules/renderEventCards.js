@@ -1,28 +1,10 @@
+let formattedDate;
 export default function renderEventCards(events) {
 	if(events !== null) {
-
 		const main = document.querySelector('.grid');
-		let formattedDate;
-	
-		function formatDate(event) {
-			const options = {
-				hour: "numeric",
-				minute: "numeric",
-				day: "numeric",
-				month: "long",
-				year: "numeric",
-			 };
-		
-			const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
-			formattedDate = new Intl.DateTimeFormat('no-NO', options).format(date)
-			}
-	
+
 		events.forEach(event => {
-			formatDate(event)
-	
-			/**
-			 * finds images with aspect ration 4:3
-			 */
+			const formattedDate = formatDate(event)
 			const image = event.images.find(image => {
 				return image.ratio === '4_3'
 			});
@@ -45,3 +27,15 @@ export default function renderEventCards(events) {
 	}
 }
 
+function formatDate(event) {
+	const options = {
+		hour: "numeric",
+		minute: "numeric",
+		day: "numeric",
+		month: "long",
+		year: "numeric",
+		};
+
+	const date = new Date(event.dates.start.dateTime || event.dates.start.localDate);
+	return new Intl.DateTimeFormat('no-NO', options).format(date)
+}
