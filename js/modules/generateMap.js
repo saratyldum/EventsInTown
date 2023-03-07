@@ -1,15 +1,15 @@
-export default function generateMap(lat, long, venue) {
+export default function generateMap(lat, long) {
 	const coordinates = [lat, long];
 
-	const map = L.map('map').setView(coordinates, 13);
+	mapboxgl.accessToken = 'pk.eyJ1IjoidHlsc2EiLCJhIjoiY2xld2p1ZW1rMGhoMzNzbzR3aTNzNTQ3NCJ9.oDIQ_kjtBNG2SWh39U5LOw';
+	const map = new mapboxgl.Map({
+		container: 'map', 
+		style: 'mapbox://styles/mapbox/streets-v12', 
+		center: [long, lat], 
+		zoom: 13,
+	});
 
-	L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-		maxZoom: 19,
-		subdomains:['mt0','mt1','mt2','mt3']
-	}).addTo(map);
-
-	const marker = L.marker(coordinates).addTo(map)
-	.bindPopup(venue)
-	.openPopup();;
-
+	const marker = new mapboxgl.Marker()
+	.setLngLat([long, lat])
+	.addTo(map);
 }
