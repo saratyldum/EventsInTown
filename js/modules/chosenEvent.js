@@ -20,7 +20,6 @@ export default function chosenEvent(e, events) {
 	const latitude = event._embedded.venues[0].location.latitude;
 	const longitude = event._embedded.venues[0].location.longitude;
 
-	const images = event.images;
 	const imageHeader = event.images.find(image => {
 			return image.width > 900;
 		});

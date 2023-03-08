@@ -2,21 +2,20 @@ import renderEventCards from "./renderEventCards.js";
 import { clientID } from "../env.js";
 
 const errorElement = document.querySelector('.errorBox');
+const grid = document.querySelector('.grid');
 
 export default async function fetchEvents(city='oslo', classificationName='', date='' ) {
-	const grid = document.querySelector('.grid');
-
 	if(grid !== null) {
 		const main = document.querySelector('.grid');
 		main.innerHTML = ''
 	
-		// const apiKey = 'g42f3Y5jMjzLC9covJlFAEMR3OZVw9CN'
 		const baseURL = 'https://app.ticketmaster.com/discovery/v2/';
 		const endpointEvents = `${baseURL}/events?apikey=${clientID}&locale=*&size=200&city=${city}&classificationName=${classificationName}&sort=date,asc&startDateTime=${date}`;
 	
 		try {
 			const response = await fetch(endpointEvents);
 			const events = await handleResponse(response)
+			renderEventCards(events);
 			return events;
 		} catch (error) {
 			handleError(error)
@@ -33,7 +32,6 @@ async function handleResponse(response) {
 			const {events} = result._embedded;
 			errorElement.classList.remove('visible');
 			errorElement.textContent = '';
-			renderEventCards(events);
 			return events;
 		} else {
 			throw new Error(`Events could not be found (${response.status})`);

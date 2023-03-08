@@ -85,8 +85,6 @@
 	.event:hover {
 		box-shadow: 2px 2px 25px var(--primary-color-RGBA);
 		transform: scale(1.1, 1.1);
-
-
 	}
 
 	.event__image img {

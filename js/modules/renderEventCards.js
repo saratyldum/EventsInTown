@@ -1,4 +1,3 @@
-let formattedDate;
 export default function renderEventCards(events) {
 	if(events !== null) {
 		const main = document.querySelector('.grid');
