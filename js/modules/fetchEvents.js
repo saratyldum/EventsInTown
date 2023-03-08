@@ -14,7 +14,6 @@ export default async function fetchEvents(city='oslo', classificationName='', da
 		const baseURL = 'https://app.ticketmaster.com/discovery/v2/';
 		const endpointEvents = `${baseURL}/events?apikey=${clientID}&locale=*&size=200&city=${city}&classificationName=${classificationName}&sort=date,asc&startDateTime=${date}`;
 	
-		
 		try {
 			const response = await fetch(endpointEvents);
 			const events = await handleResponse(response)
@@ -23,6 +22,7 @@ export default async function fetchEvents(city='oslo', classificationName='', da
 			handleError(error)
 		}
 	}
+	
 }
 
 async function handleResponse(response) {

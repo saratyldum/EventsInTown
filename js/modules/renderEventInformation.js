@@ -1,6 +1,5 @@
 import generateMap from "./generateMap.js";
 import {getInformationFromLocal, removeItemLocal, eventsStorageName} from "./localStorage.js";
-let formattedDate;
 
 export default function renderEventInformation() {
 	const body = document.querySelector('.body-information');	

@@ -26,7 +26,6 @@ export default function chosenEvent(e, events) {
 		});
 
 	ALLeventInformation.push(eventName, eventVenue, eventDate, eventImage, eventStartTime, address, postalCode, city, latitude, longitude, imageHeader);
-
 	addEventInformation([ALLeventInformation]);
 	storeInformationLocal();
 }
