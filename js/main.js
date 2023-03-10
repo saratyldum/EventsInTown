@@ -1,6 +1,6 @@
 import fetchEvents from "./modules/fetchEvents.js";
 import renderEventInformation from "./modules/renderEventInformation.js";
-import reverseGeocoding from "./modules/reverseGeocoding.js";
+// import reverseGeocoding from "./modules/reverseGeocoding.js";
 import tickets from "./modules/tickets.js";
 import { handleCategories, handleCitySearch, handleEventCardClick, setDate } from "./modules/setDefaultIndex.js";
 import { cityStorageName, getInformationFromLocal } from "./modules/localStorage.js";
@@ -8,9 +8,7 @@ import { cityStorageName, getInformationFromLocal } from "./modules/localStorage
 const	date = document.querySelector('input[type="date"]');
 
 export let chosenCity = getInformationFromLocal(cityStorageName);
-export const events = await fetchEvents(chosenCity);
-
-
+export const events = await fetchEvents(chosenCity || 'oslo');
 
 if(date !== null) {
 	setDate();
@@ -28,8 +26,6 @@ if (window.location.hash === '#body-information') {
 // async function getPosition(position) {
 	// 	const {latitude, longitude} = position.coords;
 	// 	geoCity = await reverseGeocoding(latitude, longitude);
-	// 	document.cookie = "geoCity=; expries"
-	// 	console.log(geoCity);
 	// 	const events = await fetchEvents(geoCity)
 	// }
 	
